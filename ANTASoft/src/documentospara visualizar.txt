@@ -1,0 +1,54 @@
+  <h1>Documentos de {{trabajo.nombre}}</h1>	    <h1>Documentos de {{trabajo.nombre}}</h1>
+
+
+    <router-link :to="{name:'AddDoc', params:{id:this.$route.params.id}}">	    <router-link :to="{name:'AddDoc', params:{id:this.$route.params.id}}">
+      <button>Agregar</button>	      <button type="button" class="btn btn-success">Agregar</button>
+    </router-link>	    </router-link>
+    <ul>	    <ul>
+      <li v-for="documento of docs" :key="documento.idDoc">	      <li v-for="documento of docs" :key="documento.idDoc">
+        <br />	        <br />
+        {{documento.idDoc}}	        {{documento.idDoc}}
+        <br />	        <br />
+        Nombre: {{documento.nombre}}	        Nombre: {{documento.nombre}}
+        <br />	        <br />
+        Tipo de Vigencia: {{documento.vigencia}}	        Tipo de Vigencia: {{documento.vigencia}}
+        <br />	        <br />
+        Fecha de Vigencia: {{documento.fechaVigencia}}	        Fecha de Vigencia: {{documento.fechaVigencia}}
+        <br />Archivo:	        <br />Archivo:
+        <br />	        <br />
+        <div v-if="documento.url==''">	        <div v-if="documento.url==''">
+          <p>	          <p>
+            <b>Archivo no añadido.</b>	            <b>Archivo no añadido.</b>
+            <br />	            <br />
+            <router-link :to="{name: 'Upload', params:{id: trabajo.id , id2:documento.idDoc }}">	            <router-link :to="{name: 'Upload', params:{id: trabajo.id , id2:documento.idDoc }}">
+              <button>Añadir Archivo</button>	              <button type="button" class="btn btn-outline-info">Añadir Archivo</button>
+            </router-link>|	            </router-link>|
+            <router-link	            <router-link
+              :to="{name: 'ModificarDoc', params:{id: trabajo.id , id2:documento.idDoc }}"	              :to="{name: 'ModificarDoc', params:{id: trabajo.id , id2:documento.idDoc }}"
+            >	            >
+              <button>Modificar</button>	              <button type="button" class="btn btn-primary">Modificar</button>
+            </router-link>|	            </router-link>|
+            <button @click="eliminarDoc({id:trabajo.id, id2:documento.idDoc})">Eliminar</button>	            <button
+              type="button"
+              class="btn btn-danger"
+              @click="eliminarDoc({id:trabajo.id, id2:documento.idDoc})"
+            >Eliminar</button>
+          </p>	          </p>
+        </div>	        </div>
+        <div v-else>	        <div v-else>
+          <a :href="documento.url" target="_blank">Visualizar</a>	          <a :href="documento.url" target="_blank">Visualizar</a>
+          <br />	          <br />
+          <router-link :to="{name: 'Upload', params:{id: trabajo.id , id2:documento.idDoc }}">	          <router-link :to="{name: 'Upload', params:{id: trabajo.id , id2:documento.idDoc }}">
+            <button :disabled="true">Añadir Archivo</button>	            <button type="button" class="btn btn-outline-info" :disabled="true">Añadir Archivo</button>
+          </router-link>|	          </router-link>|
+          <router-link :to="{name: 'ModificarDoc', params:{id: trabajo.id , id2:documento.idDoc }}">	          <router-link :to="{name: 'ModificarDoc', params:{id: trabajo.id , id2:documento.idDoc }}">
+            <button>Modificar</button>	            <button type="button" class="btn btn-primary">Modificar</button>
+          </router-link>|	          </router-link>|
+          <button @click="eliminarDoc({id:trabajo.id, id2:documento.idDoc})">Eliminar</button>	          <button
+            type="button"
+            class="btn btn-danger"
+            @click="eliminarDoc({id:trabajo.id, id2:documento.idDoc})"
+          >Eliminar</button>
+        </div>	        </div>
+      </li>	      </li>
+    </ul>	    </ul>

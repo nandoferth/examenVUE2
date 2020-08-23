@@ -1,0 +1,17 @@
+Codigo para validaciones:
+
+solo letras:
+onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+
+bloquear espacios:
+@keydown.space="(event) => event.preventDefault()"
+
+solo numeros:
+
+type="number"  min="0"
+
+fecha actual en el sistema:
+        <b-input type="date" v-model="date" disabled="disabled"></b-input>
+ agregar en data():{
+     date: new Date().toISOString().substr(0, 10) 
+ }

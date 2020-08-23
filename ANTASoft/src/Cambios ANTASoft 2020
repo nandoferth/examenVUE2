@@ -1,0 +1,47 @@
+Correciones de ANTASoft 07 Enero de 2020:
+
+Faciles:
+		validar campos de solo texto para no ingresar numeros (nombre, apellidos, etc,) SOLUCIONADO, FALTA IMPLEMENTAR EN TODAS LAS VISTAS
+		validar campos para que no permitan espacios(RFC) SOLUCIONADO, FALTA IMPLEMENTAR EN TODAS LAS VISTAS
+
+		cambiar Status de un campo de texto a un checklist para dejar status estaticos (activo, inactivo, pendiente, en tramite, concluido) 			-> para trabajos  lleva uno especial que es "Provision" LISTO
+
+		cambiar de "asignar sucursal" a "crear sucursal" LISTO
+
+		agregar a sucursal campo "clave de inmueble" LISTO
+
+		listado de trabajos estatico y con opcion de agregar uno nuevo 
+
+		quitar "fECHA DE TERMINO"
+
+		Limpiar ADD Doc
+
+		hacer que tipo de pago solo sea Pedir Cheque o Reembolso
+
+Intermedios:
+		En el campo de estado , hacer que sea una lista de estados y evitar que se ingrese manualmente,
+		de igual forma en municipios --> falta terminarlo, pero ya esta implementado
+
+		hacer que la fecha de creacion en automatico se asigne a la del dia en curso -> LISTO
+
+		implmentar node mailer, para envio de notificaciones 
+
+
+Dificiles:
+		Visualizacion de clientes, trabajos y sucursales como Data Tables ->Listo
+
+		historial de movimientos de usuario
+
+		cambiar el modo de asignacion : el gestor debe de asignar el cliente las sucursales y los trabajos de un solo movimiento y 			seleccionar al usuario al que se lo va a asignar, tambien se puede hacer que el mismo coordinador se asigne trabajos a si mismo.
+
+
+		aplicar validacion a todo tipo de creacion despues del nivel de profundidad de trabajo
+
+		implementar la operacion de agregar factura para coordinador: agrega un pdf y un xml despues de comprobar un trabajo pagado,
+es un nuevo nivel de profundidad en la base de datos....
+
+
+
+
+
+
